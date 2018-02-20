@@ -1,0 +1,110 @@
+{
+	"info": {
+		"name": "DEMO-TESTS",
+		"_postman_id": "269447f7-2373-b43f-de06-0554a78867e4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api.openweathermap.org/data/2.5/weather?id={{CITYID}}&APPID={{APPID}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c56ca473-0f67-4dc4-a01b-6a7a68e903ac",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?id={{CITYID}}&APPID={{APPID}}",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{CITYID}}",
+							"equals": true
+						},
+						{
+							"key": "APPID",
+							"value": "{{APPID}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "api.openweathermap.org/data/2.5/weather?q={{CITYNAME}}&APPID={{APPID}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d69ddf3a-5a19-4c3e-a0ec-4a6d4ce4b05e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q={{CITYNAME}}&APPID={{APPID}}",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{CITYNAME}}",
+							"equals": true
+						},
+						{
+							"key": "APPID",
+							"value": "{{APPID}}",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
